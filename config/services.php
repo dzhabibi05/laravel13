@@ -1,5 +1,7 @@
 <?php
 
+use Symfony\Component\HttpFoundation\RequestMatcher\SchemeRequestMatcher;
+
 return [
 
     /*
@@ -13,6 +15,12 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
+    'mailgun' => [
+        'domain' => env('MAILGUN_DOMAIN'),
+        'secret' => env('MAILGUN_SECRET'),
+        'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
+        'scheme' => env('https'),
+    ],
 
     'postmark' => [
         'key' => env('POSTMARK_API_KEY'),
